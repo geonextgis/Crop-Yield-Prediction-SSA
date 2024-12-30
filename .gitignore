@@ -12,6 +12,7 @@ private/
 models/
 notebooks/
 notebooks_2/
+diffusion_models/
 env/
 build/
 develop-eggs/

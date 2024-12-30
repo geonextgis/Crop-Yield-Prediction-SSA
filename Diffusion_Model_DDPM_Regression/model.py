@@ -73,7 +73,8 @@ class DeterministicFeedForwardNeuralNetwork(nn.Module):
             layers.append(nn.Linear(self.nn_layers[idx], self.nn_layers[idx + 1]))
             if self.use_batchnorm:
                 layers.append(nn.BatchNorm1d(self.nn_layers[idx + 1]))
-            layers.append(nn.LeakyReLU(negative_slope=self.negative_slope))
+            # layers.append(nn.LeakyReLU(negative_slope=self.negative_slope))
+            layers.append(nn.ReLU())
             layers.append(nn.Dropout(p=self.dropout_rate))
         layers.append(nn.Linear(self.nn_layers[-1], self.dim_out))
         return layers
